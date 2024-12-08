@@ -1,64 +1,132 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Users-Securitm
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo">
+    </a>
 </p>
 
-## About Laravel
+## О проекте
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Users-Securitm** — это приложение, реализующее тестовое задание компании Securitm, с использованием фреймворка Laravel 9, Vue.js и Inertia.js. Приложение предназначено для управления пользователями, обеспечивая создание, редактирование, удаление и просмотра списка пользователей с поддержкой пагинации, сортировки и поиска, как через restAPI, так и через веб-интерфейс.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Требования
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Перед установкой убедитесь, что на вашем компьютере установлены следующие компоненты:
 
-## Learning Laravel
+- **PHP**: версия 8.0 или выше
+- **Composer**: 1.10 или выше
+- **Node.js**: 14.x или выше
+- **NPM** или **Yarn**
+- **База данных**: MySQL
+- **Git**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Установка
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Клонирование репозитория
 
-## Laravel Sponsors
+```bash
+git clone https://github.com/ilg2005/users-securitm.git
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 2. Переход в директорию проекта
 
-### Premium Partners
+```bash
+cd users-securitm
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 3. Установка PHP зависимостей
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+### 4. Установка JavaScript зависимостей
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+```bash
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+*или*
 
-## License
+```bash
+yarn install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Настройка файла окружения
+
+Создайте копию файла `.env.example` и назовите ее `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Откройте файл `.env` в текстовом редакторе и настройте параметры подключения к базе данных и другие необходимые настройки:
+
+```
+APP_NAME=Users-Securitm
+APP_ENV=local
+APP_KEY=base64:...
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+VITE_PUSHER_APP_KEY=your_pusher_key
+VITE_PUSHER_APP_CLUSTER=mt1
+```
+
+### 6. Генерация ключа приложения
+
+Создайте ключ приложения:
+
+```bash
+php artisan key:generate
+```
+
+### 7. Выполнение миграций базы данных
+
+Предварительно создайте базу данных Mysql, затем выполните миграции:
+
+```bash
+php artisan migrate --seed
+```
+
+### 8. Сборка фронтенда
+
+Соберите приложение для dev:
+
+```bash
+npm run dev
+```
+
+*или для production:*
+
+```bash
+npm run build
+```
+
+### 9. Запуск сервера приложения
+
+Запустите сервер Laravel:
+
+```bash
+php artisan serve
+```
+
+По умолчанию приложение будет доступно по адресу [http://localhost:8000](http://localhost:8000).
